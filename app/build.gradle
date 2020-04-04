@@ -8,9 +8,12 @@ jacoco {
 
 tasks.withType( Test) {
     jacoco.includeNoLocationClasses = true
+	testLogging {
+		exceptionFormat = 'full'
+	}
 }
 
-task jacocoTestReport( type: JacocoReport, dependsOn: [ 'testDebugUnitTest', 'createDebugCoverageReport']) {
+task jacocoTestReport( type: JacocoReport, dependsOn: [ 'clean','testDebugUnitTest', 'createDebugCoverageReport']) {
     reports {
         xml.enabled = true
         html.enabled = true
