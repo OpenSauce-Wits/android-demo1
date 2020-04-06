@@ -17,7 +17,7 @@ tasks.withType( Test) {
 task jacocoTestReport( type: JacocoReport, dependsOn: [ 'testDebugUnitTest', 'createDebugCoverageReport']) {
     //define exclusion files in coverage reports
     def fileFilter = [ '**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree ( dir: "$project.buildDir/intermediates/classes/debug", excludes: fileFilter)
+    def debugTree = fileTree ( dir: "$project.buildDir/intermediates/javac/debug", excludes: fileFilter)
     def mainSrc = "$project.projectDir/src/main/java"
 
     sourceDirectories = files([ mainSrc])
@@ -27,7 +27,6 @@ task jacocoTestReport( type: JacocoReport, dependsOn: [ 'testDebugUnitTest', 'cr
     reports {
        xml.enabled = true
        html.enabled = true
-       //html.destination file("$project.buildDir/jacocoHTML")
     }
 }
 

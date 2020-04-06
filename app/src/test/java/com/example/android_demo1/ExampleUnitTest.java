@@ -1,5 +1,6 @@
 package com.example.android_demo1;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,14 +11,51 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    MainActivity ma ;
+    @Before
+    public void setUp()
+    {
+        ma = new MainActivity() ;
     }
     @Test
     public void mainActFunTest()
     {
-        MainActivity ma = new MainActivity() ;
         assertTrue(ma.mainActFun());
+    }
+
+    @Test
+    public void mainActFunTest0()
+    {
+        assertTrue(ma.mainActFun0());
+    }
+
+    @Test
+    public void mainActFunTest1()
+    {
+        assertTrue(ma.mainActFun1());
+    }
+
+    @Test
+    public void mainActFunTest2()
+    {
+        assertTrue(ma.mainActFun2());
+    }
+
+    @Test
+    public void mainActFunTest3()
+    {
+        assertTrue(ma.mainActFun3());
+    }
+
+    @Test
+    public void mainActFunTest4()
+    {
+        assertTrue(ma.mainActFun4());
+    }
+
+    @Test
+    public void mainActFunTest5()
+    {
+        assertTrue(ma.mainActFun5());
     }
 }
